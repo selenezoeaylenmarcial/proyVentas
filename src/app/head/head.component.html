@@ -1,0 +1,26 @@
+<ul class="nav">
+    <li>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                >
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" >Productos</a></li>
+                <li><a class="dropdown-item" [routerLink]="['agregar']">Pedidos</a></li>
+                <li><a class="dropdown-item" [routerLink]="['inventario']">Inventario</a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="['login']">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+    </li>
+</ul>
