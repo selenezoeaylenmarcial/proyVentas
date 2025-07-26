@@ -1,0 +1,48 @@
+<div class="container-sm">
+    <form>
+        <fieldset disabled>
+            <div class="mb-3">
+                <label for="codigoprod" class="form-label">Codigo</label>
+                <input type="number" class="form-control" id="codigoprod" [(ngModel)]="producto.codigo" name="codigo">
+            </div>
+        </fieldset>
+        <div class="mb-3">
+            <label for="nombreprod" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreprod" [(ngModel)]="producto.nombre" name="nombre">
+        </div>
+        <div class="mb-3">
+            <label for="precioprod" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="precioprod" [(ngModel)]="producto.precio" name="precio">
+        </div>
+        <div class="mb-3">
+            <label for="descripcionprod" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcionprod" [(ngModel)]="producto.descripcion" name="descripcion">
+        </div>
+        <div class="mb-3">
+            <label for="coloresprod" class="form-label">Colores</label>
+            <select class="form-select" name="color" id="coloresprod" aria-label="Default select example" [(ngModel)]="colorE" (change)="elegirColores()">
+                <option selected>Elegir</option>
+                <option *ngFor="let c of colores" [ngValue]="c" style="background-color: {{c.codigo}};" >{{c.nombre}}</option>
+            </select>
+
+            <div class="row">
+                <div class="col" *ngFor="let pc of coloresElegidos">
+                    <div class="card">
+                        <div class="card-body" style="background-color: {{pc.codigo}};" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="imagenesprod" class="form-label">Imagen</label>
+            <input type="file" (change)="onFileChange($event)" class="form-control" id="imagenesprod">
+        </div>
+        <div class="mb-3 prev" *ngFor="let i of imagenes">
+            <img width="100px" [src]="i" alt="">
+        </div>
+        
+        <button type="button" class="btn btn-primary" (click)="agregar()" [routerLink]="['/inventario']">Agregar</button>
+        <button type="button" class="btn btn-primary" (click)="editar()" [routerLink]="['/inventario']">Agregar</button>
+    </form>
+</div>
