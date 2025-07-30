@@ -1,5 +1,5 @@
 export class Color {
-    codigo!:string;
+    codigo?:string;
     nombre!:string;
 
     constructor(c: string, name:string){

@@ -2,9 +2,9 @@
     <h1 class="portada">Inventario</h1>
     <a class="btn btn-primary" [routerLink]="['agregar']">Nuevo</a>
     <div class="card" style="width: 18rem;" *ngFor="let p of productos">
-        <img [src]="" class="card-img-top" alt="...">
+        <img [src]="p.imagenes[0]" alt="">
         <div class="card-body">
-            <h5 class="card-title">Codigo: + {{p.codigo}}</h5>
+            <h5 class="card-title">Codigo: {{p.codigo}}</h5>
             <p class="card-text">{{p.descripcion}}</p>
             <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-primary" (click)="editarProducto(p)">Editar</button>
@@ -23,7 +23,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                                <button type="button" class="btn btn-primary" (click)="eliminarProducto(p.codigo)" data-bs-dismiss="modal">Eliminar</button>
+                                <!-- <button type="button" class="btn btn-primary" (click)="eliminarProducto(p.codigo)" data-bs-dismiss="modal">Eliminar</button> -->
                             </div>
                         </div>
                     </div>

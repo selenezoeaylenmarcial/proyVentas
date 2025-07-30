@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'tienda', component: TiendaComponent},
   {path: 'inventario', component: MostrarComponent, pathMatch: 'full'},
   {path: 'inventario/agregar', component: AgregarComponent, pathMatch: 'full'},
-  {path: 'inventario/editar', component: AgregarComponent, pathMatch: 'full'}
+  //{path: 'inventario/editar/{codigo}', component: AgregarComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Color } from 'src/app/models/color';
 import { Producto } from 'src/app/models/producto';
 import { ProductosService } from 'src/app/services/productos.service';
 
@@ -22,17 +21,17 @@ export class MostrarComponent implements OnInit{
 
   mostrarProductos(){
     this.prodServ.getAllProductos().subscribe((p) => {
-      for (var i = 0; i < this.productos.length ; i++){};
       this.productos = p;
 
       console.log("Productos recibidos:", p);
       console.log("Productos recibidos:", this.productos[0]);
     });
-
   }
 
+  
+
   eliminarProducto(id: number){
-    this.prodServ.remove(id);
+    this.prodServ.removeProducto(id);
     console.log(this.prodServ);
   }
 

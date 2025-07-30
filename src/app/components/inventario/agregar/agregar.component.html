@@ -1,11 +1,5 @@
 <div class="container-sm">
-    <form>
-        <fieldset disabled>
-            <div class="mb-3">
-                <label for="codigoprod" class="form-label">Codigo</label>
-                <input type="number" class="form-control" id="codigoprod" [(ngModel)]="producto.codigo" name="codigo">
-            </div>
-        </fieldset>
+    <form >
         <div class="mb-3">
             <label for="nombreprod" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombreprod" [(ngModel)]="producto.nombre" name="nombre">
@@ -34,15 +28,11 @@
                 </div>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="imagenesprod" class="form-label">Imagen</label>
-            <input type="file" (change)="onFileChange($event)" class="form-control" id="imagenesprod">
-        </div>
-        <div class="mb-3 prev" *ngFor="let i of imagenes">
-            <img width="100px" [src]="i" alt="">
-        </div>
-        
+        <input type="file" (change)="onFileSelected($event)" multiple accept="image/*">
+            <div *ngFor="let img of imagenes">
+                <img [src]="img" width="100">
+            </div>
         <button type="button" class="btn btn-primary" (click)="agregar()" [routerLink]="['/inventario']">Agregar</button>
-        <button type="button" class="btn btn-primary" (click)="editar()" [routerLink]="['/inventario']">Agregar</button>
+        <!-- <button type="button" class="btn btn-primary" (click)="editar()" [routerLink]="['/inventario']">Agregar</button> -->
     </form>
 </div>
